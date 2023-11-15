@@ -1,10 +1,11 @@
 #ifndef __GLOBALS_HPP__
 #define __GLOBALS_HPP__
 
-//#include "pneumatics.hpp"
+struct pneumaticSys;
 
 extern okapi::Controller controller;
-//extern pneumaticSys wings;
-//extern pneumaticSys blocker;
+
+extern pneumaticSys wings;
+extern pneumaticSys t_bar;
 
 #endif

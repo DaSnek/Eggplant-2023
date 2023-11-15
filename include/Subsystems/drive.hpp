@@ -13,6 +13,7 @@ extern okapi::MotorGroup Drive;
 
 extern std::shared_ptr<okapi::OdomChassisController> drive;
 
+extern okapi::IMU inertial;
 //-------------------------------------------------
 
 void print_state(std::string, const okapi::OdomState&);
