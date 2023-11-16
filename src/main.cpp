@@ -59,6 +59,11 @@ void opcontrol() {
 
 	while (true) {
         updateDrive();
+        update_flywheel();
+        wings.driver_update();
+        t_bar.driver_update();
+        pto.driver_update();
+
 
 		rate.delay(100_Hz); //delay to prevent cpu from overloading and therefore lagging and freezing 
 	}  

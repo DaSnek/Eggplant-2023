@@ -23,6 +23,7 @@
 //---------pneumatics----------
 #define WINGS_ADI       ' '
 #define T_BAR_ADI       ' '
+#define PTO_ADI         ' '
 //-----------------------------
 
 //-------------------------buttons-------------------------------
@@ -31,6 +32,7 @@
 
 #define WINGS_ACTUATE               okapi::ControllerDigital::L1
 #define T_BAR_ACTUATE               okapi::ControllerDigital::B
+#define PTO_ACTUATE                 okapi::ControllerDigital::B
 
 #define BUTTON_HOLD                 okapi::ControllerDigital::X
 #define BUTTON_COAST                okapi::ControllerDigital::Y
