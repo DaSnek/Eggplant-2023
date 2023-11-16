@@ -4,6 +4,8 @@
 extern okapi::Motor flywheel_m1;
 extern okapi::Motor flywheel_m2;
 
+extern okapi::MotorGroup flywheel;
+
 void update_flywheel();
 
 #endif
