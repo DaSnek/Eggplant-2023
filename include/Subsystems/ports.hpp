@@ -2,44 +2,42 @@
 #define __PORTS_HPP__
 
 //----------drive----------
-#define RIGHT_FRONT     18
-#define RIGHT_MIDDLE    19
-#define RIGHT_BACK      11 
+#define RIGHT_FRONT     19
+#define RIGHT_MIDDLE    11
+#define RIGHT_BACK      12 
 
-#define LEFT_FRONT      16 
-#define LEFT_MIDDLE     17
-#define LEFT_BACK       12 
+#define LEFT_FRONT      10 
+#define LEFT_MIDDLE     2
+#define LEFT_BACK       1 
 //-------------------------
 
-//----------intake----------
-#define INTAKE_PORT     10
-//--------------------------
+//--------flywheel--------
+#define FW_PORT_1       18
+#define FW_PORT_2       8
+//------------------------
 
-//----------catapult----------
-#define SLAPPER_PORT    21 
-//--------------------------
+//---------sensors---------
+#define IMU_PORT        13 
+//-------------------------
 
-//---------sensors----------
-#define IMU_PORT        7 
-//--------------------------
-
-//---------pneumatics----------
+//-------pneumatics--------
 #define WINGS_ADI       'A'
-#define BLOCKER_ADI     'H'
-//-----------------------------
+#define T_BAR_ADI       'B'
+#define PTO_ADI         'C'
 
-//----------------------buttons-------------------------------
-#define BUTTON_INTAKE           okapi::ControllerDigital::R1
-#define BUTTON_OUTTAKE          okapi::ControllerDigital::R2
+#define EXPANDER_PORT   -1
+//-------------------------
 
-#define AUTON_M_ACTUATE         okapi::ControllerDigital::L2
-#define WINGS_ACTUATE           okapi::ControllerDigital::L1
-#define BLOCKER_ACTUATE         okapi::ControllerDigital::B
+//---------------------------buttons-------------------------------
+#define BUTTON_FW_FORWARD           okapi::ControllerDigital::R2
+#define BUTTON_FW_BACKWARD          okapi::ControllerDigital::R1
 
-#define BUTTON_SLAPPER          okapi::ControllerDigital::L2
+#define WINGS_ACTUATE_O             okapi::ControllerDigital::B
+#define WINGS_ACTUATE_I             okapi::ControllerDigital::down
+#define T_BAR_ACTUATE_U             okapi::ControllerDigital::L1
+#define T_BAR_ACTUATE_D             okapi::ControllerDigital::L2
 
-#define BUTTON_HOLD             okapi::ControllerDigital::X
-#define BUTTON_COAST            okapi::ControllerDigital::Y
-//-----------------------------------------------------------
+#define PTO_ACTUATE                 okapi::ControllerDigital::right
+//-----------------------------------------------------------------
 
 #endif

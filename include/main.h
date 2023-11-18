@@ -85,5 +85,10 @@ void opcontrol(void);
 #include "Subsystems/drive.hpp"
 #include "Subsystems/ports.hpp"
 #include "Subsystems/globals.hpp"
+#include "Subsystems/flywheel.hpp"
+#include "Subsystems/pneumatics.hpp"
+#include "Subsystems/autonfunctions.hpp"
+#include "Subsystems/pto.hpp"
+
 
 #endif  // _PROS_MAIN_H_
