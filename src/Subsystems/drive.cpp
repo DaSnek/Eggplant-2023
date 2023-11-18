@@ -66,10 +66,8 @@ void odom_set_zero() {
 
 
 extern okapi::IMU inertial;
-
-bool toggled = false;
-
 extern okapi::Controller controller;
+
 void updateDrive() {
     pros::lcd::set_text(1, std::to_string(drive->getState().y.convert(okapi::foot))); 
     pros::lcd::set_text(2, std::to_string(drive->getState().x.convert(okapi::foot)));
@@ -79,27 +77,10 @@ void updateDrive() {
     drive->getModel()->arcade(controller.getAnalog(ControllerAnalog::leftY), 
             controller.getAnalog((ControllerAnalog::rightX)));
 
-#if 0
-    //test-----------------------------------------------------
-    if (controller.getDigital(okapi::ControllerDigital::A)) {
-            //controller.setText(0, 0, "button A pressed");
-            controller.rumble(".");
-    } else {
-            //controller.clearLine(0);
-    }
-    //---------------------------------------------------------
-
-    if (controller.getDigital(okapi::ControllerDigital::up) == 1) {
-        turnToAngle(20);
-        toggled = true;
-    }
-#endif
-
-    if (controller.getDigital(BUTTON_HOLD) == 1) {
+    if (controller.getAnalog(ControllerAnalog::leftX) < -0.90) {
         leftDrive.setBrakeMode(AbstractMotor::brakeMode::hold); 
         rightDrive.setBrakeMode(AbstractMotor::brakeMode::hold);
-
-    } else if (controller.getDigital(BUTTON_COAST) == 1) {
+    } else if (controller.getAnalog(ControllerAnalog::leftX) > 0.90) {
         leftDrive.setBrakeMode(AbstractMotor::brakeMode::coast); 
         rightDrive.setBrakeMode(AbstractMotor::brakeMode::coast);
     }

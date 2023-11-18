@@ -8,10 +8,12 @@ class pneumaticSys {
     int piston_state;
 
     pros::ADIDigitalOut piston;
-    okapi::ControllerDigital button;
+    okapi::ControllerDigital button_out;
+    okapi::ControllerDigital button_in;
 
 public:
-    pneumaticSys(char, okapi::ControllerDigital);
+    pneumaticSys(char, okapi::ControllerDigital, okapi::ControllerDigital);
+    pneumaticSys(int, char, okapi::ControllerDigital, okapi::ControllerDigital);
 
     int get_state() const;
     void set_state(int);

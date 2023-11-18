@@ -51,7 +51,6 @@ void autonomous() {
 
 }
 
-void drive_cata_hold();
 
 void opcontrol() {
 	pros::Controller master(pros::E_CONTROLLER_MASTER);
@@ -62,9 +61,8 @@ void opcontrol() {
         update_flywheel();
         wings.driver_update();
         t_bar.driver_update();
-        pto.driver_update();
-
+        update_pto();
 
 		rate.delay(100_Hz); //delay to prevent cpu from overloading and therefore lagging and freezing 
-	}  
+	}
 }
