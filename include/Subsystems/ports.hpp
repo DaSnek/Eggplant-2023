@@ -14,6 +14,7 @@
 //--------flywheel--------
 #define FW_PORT_1       18
 #define FW_PORT_2       8
+
 //------------------------
 
 //---------sensors---------
@@ -22,8 +23,8 @@
 
 //-------pneumatics--------
 #define WINGS_ADI       'A'
-#define T_BAR_ADI       'B'
-#define PTO_ADI         'C'
+#define T_BAR_ADI       'C'
+#define PTO_ADI         'B'
 
 #define EXPANDER_PORT   -1
 //-------------------------
@@ -38,6 +39,8 @@
 #define T_BAR_ACTUATE_D             okapi::ControllerDigital::L2
 
 #define PTO_ACTUATE                 okapi::ControllerDigital::right
+
+#define BUTTON_INTAKE                      okapi::ControllerDigital::Y
 //-----------------------------------------------------------------
 
 #endif

@@ -19,8 +19,11 @@ void update_flywheel() {
         leftDrive.setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
         rightDrive.setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
     }
+    if (controller.getDigital(BUTTON_INTAKE) == 1) {
+        flywheel.moveVoltage(5000);
+    }
 
-    if (controller.getDigital(BUTTON_FW_FORWARD) == 0 && (controller.getDigital(BUTTON_FW_BACKWARD) == 0)){
+    if (controller.getDigital(BUTTON_FW_FORWARD) == 0 && (controller.getDigital(BUTTON_FW_BACKWARD) == 0) && (controller.getDigital(BUTTON_INTAKE) == 0)){
         flywheel.moveVelocity(0);
 
         leftDrive.setBrakeMode(okapi::AbstractMotor::brakeMode::coast);
