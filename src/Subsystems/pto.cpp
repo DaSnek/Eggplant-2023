@@ -22,6 +22,10 @@ void update_pto() {     //add delay  two button
             pto.set_value(1);
             pros::lcd::set_text(5, "pto activated");
             controller.rumble(".");
+            
+            toggled = false;
+            start_time = timer.millis();
+            
         }
     } else {
         toggled = false;

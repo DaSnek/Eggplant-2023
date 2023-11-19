@@ -14,7 +14,6 @@
 //--------flywheel--------
 #define FW_PORT_1       18
 #define FW_PORT_2       8
-
 //------------------------
 
 //---------sensors---------
@@ -40,7 +39,7 @@
 
 #define PTO_ACTUATE                 okapi::ControllerDigital::right
 
-#define BUTTON_INTAKE                      okapi::ControllerDigital::Y
+#define BUTTON_INTAKE               okapi::ControllerDigital::Y
 //-----------------------------------------------------------------
 
 #endif
