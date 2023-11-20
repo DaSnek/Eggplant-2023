@@ -89,6 +89,7 @@ void opcontrol(void);
 #include "Subsystems/pneumatics.hpp"
 #include "Subsystems/autonfunctions.hpp"
 #include "Subsystems/pto.hpp"
+#include "Subsystems/autons.hpp"
 
 
 #endif  // _PROS_MAIN_H_

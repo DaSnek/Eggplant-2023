@@ -18,8 +18,10 @@ void update_pto() {     //add delay  two button
             return;
         }
 
-        if (toggled && (timer.millis() - start_time) > 2000_ms) {
+        if (toggled && (timer.millis() - start_time) > 880_ms) {
             pto.set_value(1);
+            leftDrive.setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
+            rightDrive.setBrakeMode(okapi::AbstractMotor::brakeMode::hold);
             pros::lcd::set_text(5, "pto activated");
             controller.rumble(".");
             
@@ -28,6 +30,7 @@ void update_pto() {     //add delay  two button
             
         }
     } else {
+        pto.set_value(0);
         toggled = false;
         start_time = timer.millis();
     }   

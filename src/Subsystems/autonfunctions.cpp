@@ -31,7 +31,7 @@ double to_IMU_heading(double d) {
 void drive_dis(double distance, double scalar, bool stop) {         
     if (abs(distance) <= 0.01)
         return;
-    okapi::IterativePosPIDController drivePID = okapi::IterativeControllerFactory::posPID(0.848, 0.00, 0.0000);
+    okapi::IterativePosPIDController drivePID = okapi::IterativeControllerFactory::posPID(0.8528, 0.00, 0.000001);
 
     double target = distance;
 
@@ -82,7 +82,7 @@ void drive_dis(double distance, double scalar, bool stop) {
 
 void turnToAngle(double targetAngle, double scalar, bool reversed) {
     okapi::IterativePosPIDController rotatePID = 
-                okapi::IterativeControllerFactory::posPID((double)0.024816, 0.000000, 0.000326); 
+                okapi::IterativeControllerFactory::posPID((double)0.02528, 0.000000, 0.00032803); 
 
     rotatePID.setTarget(0);
 
@@ -177,9 +177,9 @@ static double cal_t_angle(double tx, double ty) {
 
 //note: reverse all coordinate pairs
 void j_curve(double tx, double ty, bool reversed, double turn_scalar) {
-    okapi::IterativePosPIDController forwardPID = okapi::IterativeControllerFactory::posPID(0.848, 0.00, 0.0000);
+    okapi::IterativePosPIDController forwardPID = okapi::IterativeControllerFactory::posPID((double)0.0256, 0.000000, 0.00032880); 
     okapi::IterativePosPIDController turnPID = 
-                okapi::IterativeControllerFactory::posPID((double)1/32.0, 0.000000, 0.0005856);
+                okapi::IterativeControllerFactory::posPID((double)0.0256, 0.000000, 0.00032880); 
 
     double ix = drive->getState().y.convert(okapi::foot);
     double iy = drive->getState().x.convert(okapi::foot);
@@ -273,7 +273,7 @@ void drive_arc(double r, double targetAngle, double scalar, bool reversed) {    
     printf("current angle: %lf, target angle: %lf\n", inertial.controllerGet(), targetAngle);
 
     okapi::IterativePosPIDController rotatePID = 
-                okapi::IterativeControllerFactory::posPID((double)0.024816, 0.000000, 0.000326); //28, 42
+                okapi::IterativeControllerFactory::posPID((double)0.02528, 0.000000, 0.00032803); //28, 42
     rotatePID.setTarget(0);
 
     //double initAngle = remap(inertial.controllerGet() - targetAngle);     //moved up
